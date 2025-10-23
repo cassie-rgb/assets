@@ -1,21 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* ------------------ FONT ------------------ */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
 * {
-   font-family: "Lato", sans-serif;
-   padding:0;
-    margin:0;
+    font-family: "Lato", sans-serif;
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
-h1,h2,h3,h4,h5,h6, span {
+h1, h2, h3, h4, h5, h6, span {
     color: #242424;
     text-align: center;
     line-height: 1.25;
 }
- h1 {
-    font-size: 36px;
- }
 
-p{
+h1 {
+    font-size: 36px;
+}
+
+p {
     line-height: 1.5;
     font-size: 16px;
 }
@@ -23,24 +26,40 @@ p{
 li {
     list-style-type: none;
 }
-   .flex {
+
+/* ------------------ UTILITY ------------------ */
+.flex {
     display: flex;
 }
 
-  .flex-1 {
+.flex-1 {
     flex: 1;
-  }
- .row {
+}
+
+.container {
+    padding: 50px 0;
+}
+
+.row {
     width: 100%;
     max-width: 800px;
- }
+    margin: 0 auto;
+}
 
- text--purple {
+.text--purple {
     color: #6038b1;
 }
 
-  /* NAVIGATION BAR */
+/* Alternate background for sections */
+section:nth-child(even) {
+    background-color: #f9f9f9;
+}
 
+.section_title {
+    margin-bottom: 20px;
+}
+
+/* ------------------ NAVIGATION BAR ------------------ */
 nav {
     height: 100px;
     width: 100%;
@@ -53,6 +72,7 @@ nav {
 
 .nav__links--list {
     display: flex;
+    align-items: center;
 }
 
 .nav__links--ancor {
@@ -60,6 +80,7 @@ nav {
     color: #242424;
     font-weight: 700;
     margin: 0 12px;
+    transition: all 0.3s ease-in-out;
 }
 
 .nav__link--ancor--primary {
@@ -67,25 +88,26 @@ nav {
     padding: 8px 16px;
     border-radius: 50px;
     color: white;
-    transition: all 300ms ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
+
 .nav__link--ancor--primary:hover {
-    background-color: #4e2fa0
+    background-color: #4e2fa0;
 }
 
 .personal-logo {
-  font-size: 24px;
-  color: #6038b1;
-  margin: 0 12px;
-  font-weight: bold;
+    font-size: 24px;
+    color: #6038b1;
+    margin: 0 12px;
+    font-weight: bold;
 }
 
-/* ABOUT ME */
-
-.about-me {
-    min-height: 100dvh;
+/* ------------------ ABOUT ME ------------------ */
+#about-me {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .about-me__info--container {
@@ -95,12 +117,11 @@ nav {
     text-align: center;
     max-width: 500px;
     margin: 0 auto;
-    text-align: center;
 }
 
 .about-me__picture--mask {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
@@ -109,19 +130,182 @@ nav {
 
 .about-me__picture {
     width: 100%;
-
-/* Improving my picture */
-transform: scale(1.5);
-padding-top: 8px;
+    transform: scale(1.2);
 }
 
- .about-me__info--title {
-   margin-bottom: 16px;
+/* Titles and text */
+.about-me__info--title {
+    margin-bottom: 16px;
+}
+
+.about-me__info--para { 
+    font-size: 18px;
+    margin-bottom: 28px;
+}
+
+/* Additional styling for links inside About Me (if any) */
+.about-me__links {
+    font-size: 20px;
+    color: #6038b1;
+    text-decoration: none;
+    padding: 0 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.about-me__links--container a:hover {
+    color: #4e2fa0;
+}
+
+/* Image container (flex layout) */
+.about-me__img--container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-me__img--container img {
+    width: 100%;
+    max-width: 400px;
+}
+
+.undraw-container {
+    display: flex;
+    justify-content: center; /* center horizontally */
+    margin: 40px 0;          /* spacing above/below */
+}
+
+.undraw-image {
+    width: 100%;
+    max-width: 400px;  /* scales image on smaller screens */
+    height: auto;      /* maintains aspect ratio */
+}
+
+ /* TECH STACK */
+
+ .language__img {
+    width: 25%;
  }
 
-.about-me__info--para. { 
-    font-size: 26px;
-    margin-bottom: 28px;
+.language__img:hover {
+    filter:brightness(80%);
+    opacity: 0.86;
+    transform: scale(0.9);
+    transition: all 300ms ease;
 
+ }
+
+.language__img--wrapper {
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 16px
 }
- 
+
+.language__list {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+
+
+
+/* ------------------ RESPONSIVE DESIGN ------------------ */
+
+/* Tablets (width ≤ 76.undraw-container {
+8px) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 16px 0;
+    }
+
+    .nav__links--list {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 12px;
+    }
+
+    .personal-logo {
+        margin-bottom: 12px;
+    }
+
+    #about-me {
+        padding: 20px;
+    }
+
+    .about-me__info--container {
+        max-width: 90%;
+    }
+
+    .about-me__picture--mask {
+        width: 100px;
+        height: 100px;
+    }
+
+    .about-me__picture {
+        transform: scale(1);
+    }
+
+    .about-me__info--title {
+        font-size: 28px;
+    }
+
+    .about-me__info--para {
+        font-size: 16px;
+    }
+}
+
+/* Mobile Phones (width ≤ 480px) */
+@media (max-width: 480px) {
+    nav {
+        padding: 12px 0;
+    }
+
+    .nav__links--list {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav__links--ancor {
+        margin: 8px 0;
+        display: inline-block;
+    }
+
+    .about-me__info--title {
+        font-size: 24px;
+    }
+
+    .about-me__info--para {
+        font-size: 14px;
+    }
+
+    .about-me__picture--mask {
+        width: 80px;
+        height: 80px;
+    }
+
+    .about-me__img--container img {
+        max-width: 250px;
+    }
+}
+
+/* Very small devices (width ≤ 360px) */
+@media (max-width: 360px) {
+    .about-me__info--title {
+        font-size: 22px;
+    }
+
+    .about-me__info--para {
+        font-size: 13px;
+    }
+
+    .personal-logo {
+        font-size: 20px;
+    }
+}
+
+
+
