@@ -228,32 +228,31 @@ nav {
     justify-content: center;
 }
 
-.about-me__img--container img {
+.about-me__img {
     width: 100%;
-    max-width: 400px;
+    animation:  fade-in 1200ms 800ms backwards;
 }
 
-.undraw-container {
-    display: flex;
-    justify-content: center; /* center horizontally */
-    margin: 40px 0;          /* spacing above/below */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
-.undraw-image {
-    width: 100%;
-    max-width: 400px;  /* scales image on smaller screens */
-    height: auto;      /* maintains aspect ratio */
-}
+
 
  /* TECH STACK */
 
 .language__img {
-    width: 100%;
+    width: 100%; 
     max-width: 100px;
     transition: all 300ms ease;
 }
 
-.language:hover .language__img {
+.language:hover {
     filter: brightness(80%);
     opacity: 0.86;
     transform: scale(0.9);
@@ -372,7 +371,7 @@ margin-right: 16px;
 .project__discription--sub-title,
 .project__discription--sub-title,
 .project__discription--para,
-.project__discription--link, {
+.project__discription--link {
     text-align: left;
     color: #ffff;
 }
@@ -443,18 +442,19 @@ margin-right: 16px;
     .about-me__info--para {
         font-size: 16px;
     }
-    .language [
+    .language {
         width: calc 100% / 3 - 20px;
-    ]
+    }
 
     .project__discription--para {
         font-size: 14px;
     }
 
     .project__discription {
-        left: 30px
-        padding-right: 30px
+        left: 30px;
+        padding-right: 30px;
     }
+     }
 
     /* small Phones */
     @media (max-width: 480px) {
