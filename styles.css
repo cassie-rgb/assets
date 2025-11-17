@@ -85,6 +85,7 @@ li {
 }
 
 /* Alternate background for sections */
+
 section:nth-child(even) {
     background-color: #f9f9f9;
 }
@@ -102,15 +103,17 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: o 12px;
+    padding: 0 12px;
 }
 
-.nav__links--list {
+.nav__link--list {
     display: flex;
     align-items: center;
 }
 
 .nav__links--ancor {
+    margin: 0 12px;
+    color: #242424;
     text-decoration: none;
     color: #242424;
     font-weight: 700;
@@ -155,8 +158,8 @@ nav {
 }
 
 .about-me__picture--mask {
-    width: 120px;
-    height: 120px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
